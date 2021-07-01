@@ -4,7 +4,7 @@ const path = require("path");
 const webpack = require("webpack");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
-const VENDOR_LIBS = ["react", "react-dom"];
+const VENDOR_LIBS = ["react", "react-dom", "styled-components"];
 
 const config = {
   mode: "development",
