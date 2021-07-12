@@ -43,6 +43,9 @@ const config = {
       },
     ],
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   plugins: [
     new MiniCssExtractPlugin(),
     new webpack.optimize.SplitChunksPlugin({
@@ -52,6 +55,12 @@ const config = {
       template: "src/index.html",
     }),
     new WebpackManifestPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      JQuery: "jquery",
+      "window.$": "jquery",
+      "window.JQuery": "jquery",
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, "build"),
